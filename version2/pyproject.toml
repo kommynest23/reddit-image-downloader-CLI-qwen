@@ -1,0 +1,26 @@
+[project]
+name = "vk-media-downloader"
+version = "1.0.0"
+description = "CLI утилита для поиска и скачивания медиа из ВК"
+requires-python = ">=3.11"
+dependencies = [
+    "typer[all]>=0.9,<1.0",
+    "httpx>=0.25,<1.0",
+    "pydantic>=2.0,<3.0",
+    "sqlalchemy[asyncio]>=2.0,<3.0",
+    "aiosqlite>=0.19,<1.0",
+    "pyyaml>=6.0,<7.0",
+    "python-dotenv>=1.0,<2.0",
+    "loguru>=0.7,<1.0",
+    "rich>=13.0,<14.0",
+]
+
+[project.scripts]
+vk-downloader = "vk_downloader.cli.main:app"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["vk_downloader*"]
